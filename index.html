@@ -1,0 +1,494 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#fff7f8">
+<title>Happy 3rd Anniversary 🎀</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;600;700&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
+<style>
+:root{--pink:#e99aa9;--rose:#c96f80;--ink:#59464a;--cream:#fffaf7;--line:#f0d8dc;--shadow:0 18px 45px rgba(143,91,101,.15)}
+*{box-sizing:border-box}html,body{margin:0;min-height:100%;font-family:"Noto Sans TC",sans-serif;color:var(--ink)}
+body{background:var(--cream);overflow-x:hidden}
+body:before{content:"";position:fixed;inset:0;z-index:-2;background:repeating-linear-gradient(90deg,rgba(239,190,199,.12) 0 2px,transparent 2px 38px)}
+body:after{content:"";position:fixed;inset:0;z-index:-1;background:radial-gradient(circle at 20% 15%,#fff 0 8%,transparent 30%),radial-gradient(circle at 85% 80%,#fff 0 5%,transparent 25%)}
+button,input{font:inherit}.screen{min-height:100vh;display:none;align-items:center;justify-content:center;padding:28px 18px}.screen.active{display:flex}
+.panel{width:min(940px,100%);text-align:center}
+.ribbon{display:inline-flex;align-items:center;gap:9px;color:var(--rose);font-size:13px;letter-spacing:.16em;font-weight:700}
+.ribbon:before,.ribbon:after{content:"";width:38px;height:1px;background:var(--line)}
+.bow{font-size:45px;filter:drop-shadow(0 7px 10px rgba(201,111,128,.16));animation:float 3s ease-in-out infinite}
+h1,h2{margin:8px 0;font-family:"Playfair Display","Noto Sans TC",serif;font-weight:600;color:#674e54}
+.hero-title{font-size:clamp(43px,9vw,82px);line-height:.95;letter-spacing:.01em}
+.jp{font-size:clamp(19px,4vw,28px);letter-spacing:.22em;margin-top:18px}.sub{font-size:14px;color:#9a7e84;margin:14px 0 25px}
+.login{margin:26px auto 0;display:flex;flex-direction:column;gap:11px;width:min(320px,100%)}
+input{height:50px;border:1px solid #ead0d5;background:rgba(255,255,255,.82);border-radius:999px;text-align:center;outline:none;color:var(--ink);box-shadow:0 8px 20px rgba(145,89,101,.07)}
+input:focus{border-color:var(--pink);box-shadow:0 0 0 4px rgba(233,154,169,.12)}
+.btn{border:0;border-radius:999px;background:#d98292;color:white;padding:13px 24px;cursor:pointer;box-shadow:0 9px 20px rgba(201,111,128,.22);transition:.25s}
+.btn:hover{transform:translateY(-2px);box-shadow:0 13px 25px rgba(201,111,128,.28)}
+.btn.ghost{background:white;color:var(--rose);border:1px solid var(--line);box-shadow:none}
+.error{height:20px;color:#c96f80;font-size:12px}.tiny{font-size:11px;color:#b59a9f}
+.page-head{margin-bottom:34px}.page-head h2{font-size:clamp(29px,5vw,44px)}.page-head p{font-size:13px;color:#a3888d}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;max-width:850px;margin:auto}
+.card-wrap{perspective:1200px;height:420px;cursor:pointer}
+.card{height:100%;width:100%;position:relative;transform-style:preserve-3d;transition:transform .75s cubic-bezier(.2,.7,.2,1)}
+.card-wrap.flipped .card{transform:rotateY(180deg)}
+.face{position:absolute;inset:0;backface-visibility:hidden;border-radius:22px;border:1px solid #edd7da;box-shadow:var(--shadow);overflow:hidden}
+.back{display:flex;align-items:center;justify-content:center;background:repeating-linear-gradient(90deg,#fff 0 18px,#fdf0f2 18px 20px);position:relative}
+.back:before{content:"";position:absolute;inset:13px;border:1px dashed #e8b9c1;border-radius:16px}
+.back-inner{position:relative;z-index:1;background:#fffaf9;border-radius:50%;width:150px;height:150px;display:flex;flex-direction:column;align-items:center;justify-content:center;box-shadow:0 10px 30px rgba(160,94,108,.1)}
+.back-inner .mini-bow{font-size:38px}.back-inner span{font-size:12px;letter-spacing:.2em;color:#9a737b;margin-top:7px}
+.front{transform:rotateY(180deg);background:linear-gradient(145deg,#fff,#fff7f8);padding:20px;display:flex;flex-direction:column;justify-content:center;align-items:center}
+.front .icon{font-size:58px;margin-bottom:12px}.front h3{font-family:"Playfair Display","Noto Sans TC",serif;font-size:25px;margin:4px}.front p{font-size:13px;color:#9a7e84;line-height:1.8;margin:9px 0 16px}.front .tag{font-size:10px;letter-spacing:.18em;color:#b0747e;border:1px solid #edcfd4;border-radius:999px;padding:7px 12px}
+.note{margin-top:26px;font-size:12px;color:#a58a8f}
+
+/* Photo Booth Section */
+.photo-section{margin-top:70px;padding-top:40px;border-top:1px dashed #edd7da}
+.photobooth-frame{background:#fff;border:1px solid #edd7da;border-radius:20px;padding:20px;max-width:340px;margin:25px auto;box-shadow:var(--shadow)}
+.photo-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;background:#fff7f8;padding:12px;border-radius:12px;border:1px solid #f2dfe2}
+.photo-slot{aspect-ratio:4/3;background:#fff;border:1px dashed #e3c0c7;border-radius:8px;display:flex;align-items:center;justify-content:center;overflow:hidden;position:relative;cursor:pointer}
+.photo-slot img{width:100%;height:100%;object-fit:cover}
+.photo-slot .plus{font-size:24px;color:#d98292}
+.photobooth-footer{margin-top:15px;display:flex;justify-content:space-between;align-items:center;font-size:12px;color:#b0747e;letter-spacing:.1em;padding:0 5px}
+
+/* 🎯 Modal 彈窗與關閉按鈕絕對頂層修正 */
+.modal{position:fixed;inset:0;background:rgba(73,48,54,.36);backdrop-filter:blur(6px);display:none;align-items:center;justify-content:center;padding:18px;z-index:9999}
+.modal.show{display:flex}
+.modal-box{width:min(680px,100%);max-height:85vh;overflow-y:auto;background:#fffaf8;border:1px solid #eed6da;border-radius:25px;box-shadow:0 30px 80px rgba(63,39,45,.25);padding:40px 20px 20px 20px;position:relative}
+.close{position:absolute;right:15px;top:15px;width:34px;height:34px;border-radius:50%;border:1px solid var(--line);background:#fff;color:#a6767e;cursor:pointer;z-index:10000;font-size:18px;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 10px rgba(0,0,0,0.08)}
+.close:hover{background:#fdf0f2;color:var(--rose)}
+
+.letter{background:white;border:1px solid #f0dadd;border-radius:18px;padding:30px 20px;position:relative;box-shadow:inset 0 0 0 7px #fff8f8}
+.letter:before{content:"";position:absolute;inset:10px;border:1px dashed #eccdd2;border-radius:12px;pointer-events:none}
+.letter-content{position:relative}.letter h2{text-align:center;font-size:28px}.letter .date{text-align:center;color:#b58f96;font-size:11px;letter-spacing:.15em}.letter p{line-height:1.9;font-size:14px;white-space:pre-line}
+.coupon{border:2px solid #d9919d;border-radius:20px;background:repeating-linear-gradient(135deg,#fff 0 20px,#fff8f9 20px 40px);padding:12px}
+.coupon-inner{border:1px dashed #e3b0b8;border-radius:13px;background:rgba(255,255,255,.88);padding:30px 22px;text-align:center}
+.coupon .big{font-family:"Playfair Display","Noto Sans TC",serif;font-size:38px;color:#9b5c68}.coupon .small{font-size:11px;letter-spacing:.2em;color:#b27b84}.coupon p{line-height:1.9}.coupon-actions{display:flex;gap:9px;justify-content:center;margin-top:16px;flex-wrap:wrap}
+.toast{position:fixed;left:50%;bottom:25px;transform:translate(-50%,20px);background:#604d52;color:#fff;padding:11px 18px;border-radius:999px;font-size:12px;opacity:0;pointer-events:none;transition:.3s;z-index:10001}.toast.show{opacity:1;transform:translate(-50%,0)}
+.confetti{position:fixed;pointer-events:none;z-index:9998;font-size:18px;animation:fall 1.4s ease-out forwards}
+@keyframes float{50%{transform:translateY(-6px)}}@keyframes fall{0%{transform:translateY(0) scale(.5);opacity:0}20%{opacity:1}100%{transform:translate(var(--x),var(--y)) rotate(300deg);opacity:0}}
+@media(max-width:700px){.screen{padding:24px 14px}.cards{grid-template-columns:1fr;max-width:310px;gap:15px}.card-wrap{height:250px}.back-inner{width:105px;height:105px}.back-inner .mini-bow{font-size:28px}.front{padding:15px}.front .icon{font-size:39px;margin-bottom:3px}.front h3{font-size:21px}.front p{font-size:12px;margin:5px 0 9px}.page-head{margin-bottom:22px}.letter{padding:24px 15px}.letter p{font-size:13.5px}}
+</style>
+</head>
+<body>
+
+<section id="home" class="screen active">
+  <div class="panel">
+    <div class="bow">🎀</div>
+    <div class="ribbon">A LITTLE GIFT FOR YOU</div>
+    <h1 class="hero-title">HAPPY<br>3rd ANNIVERSARY</h1>
+    <div class="jp">三週年快樂 ♡</div>
+    <p class="sub">給我最喜歡的人，一份只屬於你的秘密禮物</p>
+    <form class="login" id="loginForm">
+      <input id="password" type="password" autocomplete="new-password" placeholder="輸入我們的秘密密碼" aria-label="秘密密碼">
+      <button type="submit" class="btn">開啟禮物 🎀</button>
+      <div class="error" id="error"></div>
+    </form>
+    <div class="tiny">Copyright ©cami</div>
+  </div>
+</section>
+
+<section id="gifts" class="screen">
+  <div class="panel">
+    <div class="page-head">
+      <div class="ribbon">OUR LITTLE GIFTS</div>
+      <h2>今天的幸運卡牌 🎀</h2>
+      <p>選一張卡片，看看今天藏著什麼小驚喜</p>
+    </div>
+    <div class="cards">
+      <div class="card-wrap" data-type="letter">
+        <div class="card">
+          <div class="face back"><div class="back-inner"><div class="mini-bow">🎀</div><span>FOR YOU</span></div></div>
+          <div class="face front"><div class="icon">💌</div><h3>三週年卡片</h3><p>有一些話，想偷偷寫給你。</p><div class="tag">OPEN MY LETTER</div></div>
+        </div>
+      </div>
+      <div class="card-wrap" data-type="peace">
+        <div class="card">
+          <div class="face back"><div class="back-inner"><div class="mini-bow">🎀</div><span>FOR YOU</span></div></div>
+          <div class="face front"><div class="icon">🎟️</div><h3>吵架和好券</h3><p>不管誰先低頭，這張券都有效 ♡</p><div class="tag">PEACE COUPON</div></div>
+        </div>
+      </div>
+      <div class="card-wrap" data-type="shoes">
+        <div class="card">
+          <div class="face back"><div class="back-inner"><div class="mini-bow">🎀</div><span>FOR YOU</span></div></div>
+          <div class="face front"><div class="icon">👟</div><h3>鞋子兌換券</h3><p>日本旅行期間，挑一雙你最喜歡的鞋子吧！</p><div class="tag">JAPAN GIFT</div></div>
+        </div>
+      </div>
+    </div>
+    <div class="note">每一張卡片都只能打開一次，但禮物可以一直珍藏 ♡</div>
+
+    <!-- 📷 記錄此時此刻：三週年四宮格拍貼 -->
+    <div class="photo-section">
+      <div class="ribbon">MEMORIES</div>
+      <h2>記錄此時此刻 📸</h2>
+      <p>點擊格子選擇照片或開啟鏡頭拍照，留下三週年的專屬回憶</p>
+
+      <div class="photobooth-frame">
+        <div class="photo-grid">
+          <div class="photo-slot" onclick="handleSlotClick(0)"><span class="plus" id="slot-0">+</span></div>
+          <div class="photo-slot" onclick="handleSlotClick(1)"><span class="plus" id="slot-1">+</span></div>
+          <div class="photo-slot" onclick="handleSlotClick(2)"><span class="plus" id="slot-2">+</span></div>
+          <div class="photo-slot" onclick="handleSlotClick(3)"><span class="plus" id="slot-3">+</span></div>
+        </div>
+        <div class="photobooth-footer">
+          <span>OUR 3rd ANNIVERSARY</span>
+          <span>2026.09.20 🎀</span>
+        </div>
+      </div>
+
+      <input type="file" id="fileInput" accept="image/*" style="display:none">
+      <button type="button" class="btn" id="generatePhotobooth">生成拍貼圖片 🎀</button>
+    </div>
+
+  </div>
+</section>
+
+<div class="modal" id="modal">
+  <div class="modal-box">
+    <button type="button" class="close" id="close" onclick="closeModal()">✕</button>
+    <div id="modalContent"></div>
+  </div>
+</div>
+<div class="toast" id="toast"></div>
+
+<script>
+const SECRET = "0920"; 
+const LETTER = `威廷：
+
+三年啦！時間真的過得好快，
+我想，相逢的意義在於彼此照亮，
+你曾經說我是你的太陽，
+那你就是我的月亮，在黑暗中默默守護著，
+散發出低調的光芒卻又不可替代，
+你的無私且廣闊的心，是一份世上難尋的品質，
+謝謝你願意成為我的愛人，同時也是我最好的朋友，
+未來的每一天，我們也會繼續為彼此照亮，
+我愛你！
+
+by 家宜`;
+
+const home=document.querySelector("#home"), gifts=document.querySelector("#gifts");
+const modal=document.querySelector("#modal"), modalContent=document.querySelector("#modalContent");
+const toast=document.querySelector("#toast");
+
+function showToast(msg){toast.textContent=msg;toast.classList.add("show");setTimeout(()=>toast.classList.remove("show"),2200)}
+function confetti(){
+  ["🎀","♡","✦","♡","🎀","✧"].forEach((s,i)=>{
+    const e=document.createElement("span");e.className="confetti";e.textContent=s;
+    e.style.left=(35+Math.random()*30)+"%";e.style.top=(35+Math.random()*20)+"%";
+    e.style.setProperty("--x",(Math.random()*300-150)+"px");e.style.setProperty("--y",(Math.random()*300-50)+"px");
+    document.body.appendChild(e);setTimeout(()=>e.remove(),1500);
+  });
+}
+
+document.querySelector("#loginForm").addEventListener("submit",e=>{
+  e.preventDefault();
+  const value=document.querySelector("#password").value.trim();
+  if(value===SECRET){
+    document.querySelector("#error").textContent="";
+    home.classList.remove("active");gifts.classList.add("active");confetti();
+  }else{
+    document.querySelector("#error").textContent="密碼好像不對，再想一下我們的專屬回憶 ♡";
+    document.querySelector("#password").animate([{transform:"translateX(-6px)"},{transform:"translateX(6px)"},{transform:"translateX(0)"}],{duration:280});
+  }
+});
+
+document.querySelectorAll(".card-wrap").forEach(w=>{
+  w.addEventListener("click",()=>{
+    if(!w.classList.contains("flipped")){
+      w.classList.add("flipped");setTimeout(()=>openGift(w.dataset.type),550);
+    }
+  });
+});
+
+function openGift(type){
+  if(type==="letter"){
+    modalContent.innerHTML=`<div class="letter"><div class="letter-content">
+      <div class="ribbon">FOR MY LOVE</div><h2>三週年快樂 ♡</h2><div class="date">OUR 3rd ANNIVERSARY</div>
+      <p>${LETTER}</p><div style="text-align:center;font-size:25px">🎀 ♡ 🎀</div>
+    </div></div>`;
+  }else if(type==="peace"){
+    modalContent.innerHTML=`<div class="coupon"><div class="coupon-inner">
+      <div class="small">ARGUMENT PEACE COUPON</div><div class="big">吵架和好券</div>
+      <p>本券可於我們吵架時使用。<br><b>不論誰對誰錯，都可以優先和好一次 ♡</b></p>
+      <div style="font-size:12px;color:#a77b83">永久有效 · 僅限我們兩個人使用</div>
+      <div class="coupon-actions"><button type="button" class="btn save-btn" data-type="peace">長按／右鍵保存圖片</button><button type="button" class="btn ghost" onclick="closeModal()">關閉</button></div>
+    </div></div>`;
+  }else if(type==="shoes"){
+    modalContent.innerHTML=`<div class="coupon"><div class="coupon-inner">
+      <div class="small">JAPAN TRIP · SHOES GIFT</div><div style="font-size:64px;margin:5px">👟</div><div class="big">鞋子兌換券</div>
+      <p><b>日本旅行期間限定 ♡</b><br>可以兌換一雙你真正喜歡的鞋子。</p>
+      <div style="font-size:12px;color:#a77b83">不限品牌 · 挑你喜歡的就好</div>
+      <div class="coupon-actions"><button type="button" class="btn save-btn" data-type="shoes">長按／右鍵保存圖片</button><button type="button" class="btn ghost" onclick="closeModal()">關閉</button></div>
+    </div></div>`;
+  }
+  modal.classList.add("show");
+}
+
+modalContent.addEventListener("click", e => {
+  const btn = e.target.closest(".save-btn");
+  if (btn) {
+    const type = btn.getAttribute("data-type");
+    saveCoupon(type);
+  }
+});
+
+function closeModal(){
+  if(webcamStream){
+    webcamStream.getTracks().forEach(track => track.stop());
+    webcamStream = null;
+  }
+  modal.classList.remove("show");
+}
+
+modal.addEventListener("click",e=>{if(e.target===modal)closeModal()});
+
+async function saveCoupon(type){
+  const canvas=document.createElement("canvas"),ctx=canvas.getContext("2d");
+  canvas.width=1080;canvas.height=1350;
+  ctx.fillStyle="#fffaf8";ctx.fillRect(0,0,1080,1350);
+  ctx.strokeStyle="#d9919d";ctx.lineWidth=10;ctx.strokeRect(45,45,990,1260);
+  ctx.strokeStyle="#e3b0b8";ctx.lineWidth=2;ctx.setLineDash([10,10]);ctx.strokeRect(75,75,930,1200);ctx.setLineDash([]);
+  ctx.textAlign="center";ctx.fillStyle="#b27b84";ctx.font="24px sans-serif";ctx.fillText(type==="peace"?"ARGUMENT PEACE COUPON":"JAPAN TRIP · SHOES GIFT",540,180);
+  ctx.font="76px sans-serif";ctx.fillText(type==="peace"?"🎟️":"👟",540,300);
+  ctx.fillStyle="#9b5c68";ctx.font="bold 64px sans-serif";ctx.fillText(type==="peace"?"吵架和好券":"鞋子兌換券",540,430);
+  ctx.fillStyle="#59464a";ctx.font="30px sans-serif";
+  if(type==="peace"){
+    ctx.fillText("不論誰對誰錯，都可以優先和好一次 ♡",540,550);
+    ctx.fillText("本券永久有效 · 僅限我們兩個人使用",540,625);
+  } else {
+    ctx.fillText("日本旅行期間，可以兌換一雙",540,550);
+    ctx.fillText("你真正喜歡的鞋子 ♡",540,610);
+    ctx.fillText("不限品牌 · 挑你喜歡的就好",540,690);
+  }
+  ctx.fillStyle="#d9919d";ctx.font="46px sans-serif";ctx.fillText("🎀  ♡  🎀",540,1120);
+  ctx.fillStyle="#b27b84";ctx.font="22px sans-serif";ctx.fillText("HAPPY 3rd ANNIVERSARY",540,1185);
+
+  const url = canvas.toDataURL("image/png");
+  const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+
+  if (isMobile) {
+    modalContent.innerHTML = `
+      <div style="text-align:center; padding:10px;">
+        <img src="${url}" style="width:100%; max-width:320px; border-radius:12px; box-shadow:0 4px 15px rgba(0,0,0,0.15); -webkit-touch-callout:default; pointer-events:auto;" />
+        <p style="margin-top:15px; color:#9b5c68; font-weight:bold; font-size:16px;">👇 請長按上方圖片選取「加入照片」💗</p>
+        <button type="button" class="btn ghost" onclick="closeModal()" style="margin-top:10px;">關閉</button>
+      </div>
+    `;
+  } else {
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = (type==="peace"?"吵架和好券":"鞋子兌換券") + ".png";
+    a.click();
+  }
+  showToast("券已準備好 ♡");
+}
+
+/* --- 📸 拍貼機邏輯 (電腦專用 Webcam 視窗修正) --- */
+let photoImages = [null, null, null, null];
+let activeSlotIndex = 0;
+let webcamStream = null;
+const fileInput = document.getElementById('fileInput');
+
+function handleSlotClick(index) {
+  activeSlotIndex = index;
+  const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+
+  if (isMobile) {
+    // 手機直接喚起原生的選擇與拍照機制
+    fileInput.click();
+  } else {
+    // 電腦顯示選擇選項：直接開啟 Webcam 視訊或挑選照片
+    modalContent.innerHTML = `
+      <div style="text-align:center; padding:15px;">
+        <h3 style="color:#674e54; margin-top:0;">選擇照片 📸</h3>
+        <p style="font-size:13px; color:#a3888d; margin-bottom:20px;">請選擇開啟電腦鏡頭拍照，或從本地選擇相片</p>
+        <div style="display:flex; gap:12px; justify-content:center; flex-wrap:wrap;">
+          <button type="button" class="btn" onclick="startCamera()">開啟鏡頭拍照 📷</button>
+          <button type="button" class="btn ghost" onclick="triggerFileUpload()">上傳電腦照片 🖼️</button>
+        </div>
+      </div>
+    `;
+    modal.classList.add("show");
+  }
+}
+
+function triggerFileUpload() {
+  closeModal();
+  fileInput.click();
+}
+
+function handleImageSelect(file) {
+  if (file) {
+    const reader = new FileReader();
+    reader.onload = function(evt) {
+      const img = new Image();
+      img.onload = function() {
+        photoImages[activeSlotIndex] = img;
+        const slotEl = document.getElementById(`slot-${activeSlotIndex}`).parentElement;
+        slotEl.innerHTML = `<img src="${evt.target.result}" style="width:100%;height:100%;object-fit:cover;">`;
+      };
+      img.src = evt.target.result;
+    };
+    reader.readAsDataURL(file);
+  }
+}
+
+fileInput.addEventListener('change', e => handleImageSelect(e.target.files[0]));
+
+async function startCamera() {
+  try {
+    webcamStream = await navigator.mediaDevices.getUserMedia({ 
+      video: { width: { ideal: 1280 }, height: { ideal: 960 } }, 
+      audio: false 
+    });
+    modalContent.innerHTML = `
+      <div style="text-align:center;">
+        <h3 style="color:#674e54; margin-top:0;">電腦鏡頭預覽 📸</h3>
+        <div style="position:relative; width:100%; max-width:480px; margin:0 auto; border-radius:16px; overflow:hidden; border:2px solid #edd7da; background:#000;">
+          <video id="webcamVideo" autoplay playsinline style="width:100%; transform: scaleX(-1); display:block;"></video>
+          <div id="countdown" style="position:absolute; inset:0; display:none; align-items:center; justify-content:center; font-size:72px; color:#fff; font-weight:bold; background:rgba(0,0,0,0.3);">3</div>
+        </div>
+        <div style="margin-top:15px; display:flex; gap:10px; justify-content:center;">
+          <button type="button" class="btn" id="takePhotoBtn" onclick="snapPhoto()">拍攝 📸</button>
+          <button type="button" class="btn ghost" onclick="closeModal()">取消</button>
+        </div>
+      </div>
+    `;
+    const video = document.getElementById('webcamVideo');
+    video.srcObject = webcamStream;
+  } catch (err) {
+    console.error("Camera error:", err);
+    alert("無法啟動電腦鏡頭！請確認網址開頭為 https:// 且已授權相機權限。");
+  }
+}
+
+function snapPhoto() {
+  const countdownEl = document.getElementById('countdown');
+  const btn = document.getElementById('takePhotoBtn');
+  btn.disabled = true;
+  countdownEl.style.display = "flex";
+  let count = 3;
+  countdownEl.textContent = count;
+
+  const timer = setInterval(() => {
+    count--;
+    if (count > 0) {
+      countdownEl.textContent = count;
+    } else {
+      clearInterval(timer);
+      const video = document.getElementById('webcamVideo');
+      const canvas = document.createElement('canvas');
+      canvas.width = video.videoWidth || 640;
+      canvas.height = video.videoHeight || 480;
+      const ctx = canvas.getContext('2d');
+      
+      ctx.translate(canvas.width, 0);
+      ctx.scale(-1, 1);
+      ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
+
+      const dataUrl = canvas.toDataURL('image/png');
+      const img = new Image();
+      img.onload = function() {
+        photoImages[activeSlotIndex] = img;
+        const slotEl = document.getElementById(`slot-${activeSlotIndex}`).parentElement;
+        slotEl.innerHTML = `<img src="${dataUrl}" style="width:100%;height:100%;object-fit:cover;">`;
+        closeModal();
+      };
+      img.src = dataUrl;
+    }
+  }, 800);
+}
+
+document.getElementById('generatePhotobooth').onclick = async () => {
+  const canvas = document.createElement('canvas');
+  const ctx = canvas.getContext('2d');
+  canvas.width = 1000;
+  canvas.height = 1400;
+
+  ctx.fillStyle = "#ffffff";
+  ctx.fillRect(0, 0, 1000, 1400);
+
+  ctx.strokeStyle = "#edd7da";
+  ctx.lineWidth = 12;
+  ctx.strokeRect(30, 30, 940, 1340);
+
+  const gridX = [70, 515, 70, 515];
+  const gridY = [80, 80, 620, 620];
+  const imgWidth = 415;
+  const imgHeight = 510;
+
+  for (let i = 0; i < 4; i++) {
+    ctx.fillStyle = "#fff7f8";
+    ctx.fillRect(gridX[i], gridY[i], imgWidth, imgHeight);
+    
+    if (photoImages[i]) {
+      const img = photoImages[i];
+      const aspect = img.width / img.height;
+      const targetAspect = imgWidth / imgHeight;
+      let sx, sy, sWidth, sHeight;
+
+      if (aspect > targetAspect) {
+        sHeight = img.height;
+        sWidth = img.height * targetAspect;
+        sx = (img.width - sWidth) / 2;
+        sy = 0;
+      } else {
+        sWidth = img.width;
+        sHeight = img.width / targetAspect;
+        sx = 0;
+        sy = (img.height - sHeight) / 2;
+      }
+      ctx.drawImage(img, sx, sy, sWidth, sHeight, gridX[i], gridY[i], imgWidth, imgHeight);
+    } else {
+      ctx.fillStyle = "#d9919d";
+      ctx.font = "40px sans-serif";
+      ctx.textAlign = "center";
+      ctx.fillText("🎀", gridX[i] + imgWidth/2, gridY[i] + imgHeight/2);
+    }
+  }
+
+  ctx.fillStyle = "#b0747e";
+  ctx.font = "bold 32px sans-serif";
+  ctx.textAlign = "left";
+  ctx.fillText("OUR 3rd ANNIVERSARY", 70, 1230);
+  
+  ctx.textAlign = "right";
+  ctx.fillText("2026.09.20 🎀", 930, 1230);
+
+  ctx.fillStyle = "#d98292";
+  ctx.font = "24px sans-serif";
+  ctx.textAlign = "center";
+  ctx.fillText("♡ FOREVER WITH YOU ♡", 500, 1285);
+
+  const url = canvas.toDataURL("image/png");
+  const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+
+  if (isMobile) {
+    modalContent.innerHTML = `
+      <div style="text-align:center; padding:10px;">
+        <img src="${url}" style="width:100%; max-width:300px; border-radius:12px; box-shadow:0 4px 15px rgba(0,0,0,0.15); -webkit-touch-callout:default; pointer-events:auto;" />
+        <p style="margin-top:15px; color:#9b5c68; font-weight:bold; font-size:16px;">👇 請長按上方拍貼選取「加入照片」💗</p>
+        <button type="button" class="btn ghost" onclick="closeModal()" style="margin-top:10px;">關閉</button>
+      </div>
+    `;
+  } else {
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = "3rd_Anniversary_Photobooth.png";
+    a.click();
+    modalContent.innerHTML = `
+      <div style="text-align:center; padding:10px;">
+        <img src="${url}" style="width:100%; max-width:300px; border-radius:12px; box-shadow:0 4px 15px rgba(0,0,0,0.15);" />
+        <p style="margin-top:15px; color:#9b5c68; font-weight:bold; font-size:16px;">三週年拍貼已成功下載！💗</p>
+        <button type="button" class="btn ghost" onclick="closeModal()" style="margin-top:10px;">關閉</button>
+      </div>
+    `;
+  }
+  modal.classList.add("show");
+  showToast("拍貼已成功生成 ♡");
+};
+</script>
+</body>
+</html>
